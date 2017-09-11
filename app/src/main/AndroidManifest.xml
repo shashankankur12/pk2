@@ -17,9 +17,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Dashboard"
-            android:label="@string/title_activity_dashboard"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".MainActivity"
+            android:label="PocketKharch"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddCategory"></activity>
     </application>
 
 </manifest>

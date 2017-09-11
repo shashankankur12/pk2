@@ -1,5 +1,6 @@
 package aavartan.pocketkharch;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Animation;
@@ -21,16 +22,16 @@ public class Splash extends AppCompatActivity {
         imageView.startAnimation(animation);
         //Typeface mycustomefont=Typeface.createFromAsset(getAssets(),"font/segoepr.ttf");
         //textView.setTypeface(mycustomefont);
-        //final Intent intent=new Intent(this,);
+        final Intent intent=new Intent(this,MainActivity.class);
         Thread timer =new Thread(){
             public void run(){
                 try {
-                    sleep(3000);
+                    sleep(2500);
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }
                 finally {
-                    //startActivity(intent);
+                    startActivity(intent);
                     finish();
                 }
             }
