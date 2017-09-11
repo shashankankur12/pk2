@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PocketKharch</string>
+    <string name="app_name">Pocket Kharch</string>
     <string name="title_activity_dashboard">Dashboard</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
