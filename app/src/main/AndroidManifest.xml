@@ -20,7 +20,9 @@
             android:name=".MainActivity"
             android:label="PocketKharch"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddCategory"></activity>
+        <activity android:name=".AddCategory"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="category"/>
     </application>
 
 </manifest>
