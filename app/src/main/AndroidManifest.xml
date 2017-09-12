@@ -24,7 +24,8 @@
             android:name=".AddCategory"
             android:label="category"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Add_Exp"></activity>
+        <activity android:name=".Add_Exp" />
+        <activity android:name=".Calculator"></activity>
     </application>
 
 </manifest>
