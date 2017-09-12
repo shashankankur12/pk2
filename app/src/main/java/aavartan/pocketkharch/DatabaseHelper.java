@@ -108,11 +108,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void DeleteCat(String CatID){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.execSQL("delete from cat_table where CATEGORY='"+CatID+"';");
+        sqLiteDatabase.execSQL("update main_table set CATEGORY='OTHERS' where CATEGORY='"+CatID+"';");
     }
 
     public void UpdateCat(String CatID,String NewCatID){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.execSQL("update cat_table set CATEGORY='"+NewCatID+"' where CATEGORY='"+CatID+"';");
+        sqLiteDatabase.execSQL("update main_table set CATEGORY='"+NewCatID+"' where CATEGORY='"+CatID+"';");
     }
 
     //Dump Query

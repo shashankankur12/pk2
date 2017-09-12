@@ -31,15 +31,30 @@ public class AddCategory extends AppCompatActivity {
     DatabaseHelper myDb;
     public String[] string = new String[20];
     Integer count,sid,uid;
+    Context context = this;
 
-    @Override
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_category);
-        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar2);
+
+       Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Add Category");
         toolbar.setTitleTextColor(Color.parseColor("#FFFFFF"));
+
+       toolbar.setNavigationIcon(R.drawable.ic_back);
+       toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+               Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+
+           }
+       });
+
         myDb = new DatabaseHelper(this);
         //textView_list = (TextView) findViewById(R.id.textView_list);
         editText_cat = (EditText) findViewById(R.id.editText_cat);
@@ -54,7 +69,7 @@ public class AddCategory extends AppCompatActivity {
         TableLayout tl = (TableLayout) findViewById(R.id.main_table);
         TableRow tr_head = new TableRow(this);
         tr_head.setId(10);
-        tr_head.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        tr_head.setBackgroundColor(Color.parseColor("#a8e4e5"));
         tr_head.setLayoutParams(new ActionBar.LayoutParams(
                 ActionBar.LayoutParams.FILL_PARENT,
                 ActionBar.LayoutParams.WRAP_CONTENT));
@@ -200,27 +215,43 @@ public class AddCategory extends AppCompatActivity {
                     ActionBar.LayoutParams.FILL_PARENT,
                     ActionBar.LayoutParams.WRAP_CONTENT));
             count++;
-
         }
     }
 
     public void AddCat(){
         AddCat_btn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                if(editText_cat.length() == 0)
-                {
-                    Toast.makeText(AddCategory.this,"Enter Category",Toast.LENGTH_LONG).show();
-                    return;
-                }
-                boolean isInserted = myDb.insertData_cat(editText_cat.getText().toString().toUpperCase());
-                finish();
-                startActivity(getIntent());
 
-                editText_cat.setText("");
-                if(isInserted == true)
-                    Toast.makeText(AddCategory.this,"Category Inserted",Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(AddCategory.this,"Category Not Inserted",Toast.LENGTH_LONG).show();
+                final AlertDialog.Builder alert = new AlertDialog.Builder(context);
+                alert.setTitle("ADD CATEGORY");
+                final EditText input = new EditText(context);
+                alert.setView(input);
+                alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        String srt = input.getEditableText().toString();
+                        if(srt.length() == 0)
+                        {
+                            Toast.makeText(AddCategory.this,"Empty Category",Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                        boolean isInserted = myDb.insertData_cat(srt.toString().toUpperCase());
+                        finish();
+                        startActivity(getIntent());
+                        ///editText_cat.setText("");
+                        if(isInserted == true)
+                            Toast.makeText(AddCategory.this,"Category Inserted",Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(AddCategory.this,"Category Not Inserted",Toast.LENGTH_LONG).show();
+                    } // End of onClick(DialogInterface dialog, int whichButton)
+                }); //End of alert.setPositiveButton
+                alert.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // Canceled.
+                        dialog.cancel();
+                    }
+                }); //End of alert.setNegativeButton
+                AlertDialog alertDialog = alert.create();
+                alertDialog.show();
             }
         });
     }

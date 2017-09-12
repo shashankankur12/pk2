@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+
+    android:background="#A8E4E5"
+    tools:context="aavartan.pocketkharch.Add_Exp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar3"
+        android:background="#a8e4e5"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="108dp"
+            android:layout_height="39dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="14dp"
+            android:text="Date"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="108dp"
+            android:layout_height="39dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView11"
+            android:layout_toStartOf="@+id/dateview"
+            android:text="Category"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="108dp"
+            android:layout_height="39dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView12"
+            android:text="Amount"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="108dp"
+            android:layout_height="39dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView13"
+            android:text="Item"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/dateview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView12"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/textView11"
+            android:layout_toEndOf="@+id/textView11"
+            android:textSize="20dp"
+            android:ems="10"
+            android:inputType="none"
+            android:onClick="setDate"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+        <EditText
+            android:id="@+id/editText_amt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView14"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView12"
+            android:layout_toEndOf="@+id/textView12"
+            android:ems="10"
+            android:inputType="number|numberSigned|numberDecimal" />
+
+        <EditText
+            android:id="@+id/editText_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView14"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/editText_amt"
+            android:layout_toEndOf="@+id/textView13"
+            android:ems="10"
+            android:inputType="text" />
+
+
+        <TextView
+            android:id="@+id/textView_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textView13"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView11"
+            android:layout_toEndOf="@+id/textView12"
+            android:text="FOOD"
+            android:textAppearance="@style/TextAppearance.AppCompat.Notification.Title.Media"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+
+        <Button
+            android:id="@+id/button_sbt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="view" />
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+
+</RelativeLayout>

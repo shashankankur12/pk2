@@ -20,9 +20,11 @@
             android:name=".MainActivity"
             android:label="Pocket Kharch"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddCategory"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="category"/>
+        <activity
+            android:name=".AddCategory"
+            android:label="category"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Add_Exp"></activity>
     </application>
 
 </manifest>

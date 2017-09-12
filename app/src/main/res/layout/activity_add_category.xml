@@ -30,25 +30,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/toolbar2"
         android:layout_alignParentEnd="true"
-        android:layout_above="@+id/editText_cat"></TableLayout>
+        android:layout_above="@+id/editText_cat">
 
-    <EditText
-        android:id="@+id/editText_cat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="Enter Text Category"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771"
-        android:layout_alignTop="@+id/AddCat_btn"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/AddCat_btn"
-        android:layout_alignBottom="@+id/AddCat_btn" />
+    </TableLayout>
 
     <Button
         android:id="@+id/AddCat_btn"
@@ -57,9 +41,10 @@
         android:layout_height="wrap_content"
 
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="71dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp"
         android:text="ADD"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintLeft_toLeftOf="parent"
