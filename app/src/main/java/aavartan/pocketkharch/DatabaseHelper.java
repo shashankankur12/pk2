@@ -89,6 +89,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
+    public Cursor getCatData(String Cat,String CurMonth,String CurYear){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME+" where CATEGORY = '"+Cat+"' and MONTH = '"+CurMonth+"' and YEAR = '"+CurYear+"'",null);
+        return res;
+    }
+
     public boolean insertData(String DAY, String MONTH, String YEAR, String CATEGORY, String AMOUNT,String DESCRIPTION){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

@@ -131,7 +131,7 @@ public class Add_Exp extends AppCompatActivity {
 
         if (id == 999) {
             return new DatePickerDialog(this,
-                    myDateListener, year, month, day);
+                    myDateListener, year, month-1, day);
         }
         return null;
     }
@@ -198,11 +198,46 @@ public class Add_Exp extends AppCompatActivity {
                         //t_view.setText(Cat.toString());
                         Calendar c = Calendar.getInstance();
                         int CurDay=c.get(Calendar.DATE);
-                        int CurMonth=c.get(Calendar.MONTH);
+                        int CurMonth=c.get(Calendar.MONTH)+1;
                         int CurYear=c.get(Calendar.YEAR);
-                        if(CurDay<day && CurMonth<=month && CurYear<=year){
-                            Toast.makeText(Add_Exp.this,"Date is Greater than Current Date",Toast.LENGTH_LONG).show();
-                            return;
+                        if(CurYear==year)
+                        {
+                            if(CurMonth==month)
+                            {
+                                if(CurDay>=day)
+                                {
+                                    //valid
+                                }
+                                else
+                                {
+                                    Toast.makeText(Add_Exp.this,"Date is Greater than Current Date",Toast.LENGTH_LONG).show();
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                if(CurMonth>month)
+                                {
+                                    //valid
+                                }
+                                else
+                                {
+                                    Toast.makeText(Add_Exp.this,"Date is Greater than Current Date",Toast.LENGTH_LONG).show();
+                                    return;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if(CurYear>year)
+                            {
+                                //Valid
+                            }
+                            else
+                            {
+                                Toast.makeText(Add_Exp.this,"Date is Greater than Current Date",Toast.LENGTH_LONG).show();
+                                return;
+                            }
                         }
                         if(editText_amt.getText().toString().length() == 0){
                             Toast.makeText(Add_Exp.this,"Enter Amount",Toast.LENGTH_LONG).show();
