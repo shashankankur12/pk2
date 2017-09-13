@@ -28,6 +28,8 @@ import java.util.Calendar;
 
 import br.com.bloder.magic.view.MagicButton;
 
+import static android.R.id.toggle;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     DatabaseHelper myDb;
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         myDb = new DatabaseHelper(this);
-        view_total_amt = (TextView) findViewById(R.id.view_total_amt);
+       view_total_amt = (TextView) findViewById(R.id.view_total_amt);
         gridLayout = (GridLayout) findViewById(R.id.tableGrid);
         magicButton = (MagicButton) findViewById(R.id.magic_button);
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -76,8 +78,7 @@ public class MainActivity extends AppCompatActivity
                     startActivity(intent);
 
                 }
-            });
-        }
+            });        }
 
         void drawerLayout(){
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -106,6 +107,8 @@ public class MainActivity extends AppCompatActivity
         getMenuInflater().inflate(R.menu.dashboard, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -146,7 +149,7 @@ public class MainActivity extends AppCompatActivity
 
             Intent intent = new Intent(this,Calculator.class);
             startActivity(intent);
-
+            return true;
 
         } else if (id == R.id.nav_backup) {
 
