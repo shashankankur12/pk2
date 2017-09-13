@@ -14,11 +14,46 @@
         android:layout_height="40dp"
         android:text="hhhhhhhhh"
         android:paddingTop="130dp"
-        android:paddingLeft="140dp"
+        android:paddingLeft="135dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         android:layout_marginTop="150dp"
         />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="165dp"
+        >
+        <GridLayout
+        android:id="@+id/tableGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.393"
+        app:theme="@style/AlertDialog.AppCompat">
+
+        </GridLayout>
+    </ScrollView>
+
+    <br.com.bloder.magic.view.MagicButton
+        android:id="@+id/magic_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="80dp"
+        android:paddingTop="70dp"
+        app:button_icon="@drawable/your_icon"
+        app:button_icon_height="30dp"
+        app:button_icon_width="30dp"
+        app:expandable_area_color="#a8e4e5"
+        app:hide_text=" CALENDAR"
+        app:hide_text_color="@android:color/black"
+        app:hide_text_size="07dp"
+        app:icon_button_color="#4169e1"
+        app:magic_button_size="50dp" />
 
     <include
         layout="@layout/app_bar_dashboard"
@@ -34,36 +69,5 @@
         app:headerLayout="@layout/nav_header_dashboard"
         app:menu="@menu/activity_dashboard_drawer" />
 
-
-
-    <br.com.bloder.magic.view.MagicButton
-        android:id="@+id/magic_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="80dp"
-        android:paddingTop="70dp"
-        app:button_icon_height="30dp"
-        app:button_icon_width="30dp"
-        app:button_icon="@drawable/your_icon"
-        app:expandable_area_color="#a8e4e5"
-        app:hide_text=" CALENDAR"
-        app:hide_text_color="@android:color/black"
-        app:hide_text_size="07dp"
-        app:icon_button_color="#4169e1"
-        app:magic_button_size="50dp" />
-
-    <GridLayout
-        android:id="@+id/tableGrid"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="200dp"
-        android:paddingTop="180dp"
-        app:theme="@style/AlertDialog.AppCompat"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393">
-    </GridLayout>
 
 </android.support.v4.widget.DrawerLayout>

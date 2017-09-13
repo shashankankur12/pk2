@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity
             "2016","2017","2018","2019"};
     ArrayList<String> categoryList = new ArrayList<String>();
     Toolbar toolbar;
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity
         view_total_amt = (TextView) findViewById(R.id.view_total_amt);
         gridLayout = (GridLayout) findViewById(R.id.tableGrid);
         magicButton = (MagicButton) findViewById(R.id.magic_button);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
 
         calView();
         CurDateView();
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity
 
     }
        void floatingActionBtn() {
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -114,6 +116,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_Search) {
+            Intent intent= new Intent(MainActivity.this,Search.class);
+            startActivity(intent);
             return true;
         }
         if (id == R.id.action_Add_Reminder) {
@@ -130,7 +134,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+    //@SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.

@@ -29,7 +29,7 @@ public class AddCategory extends AppCompatActivity {
     EditText editText_cat;
     Button AddCat_btn;
     DatabaseHelper myDb;
-    public String[] string = new String[20];
+    public String[] string = new String[30];
     Integer count,sid,uid;
     Context context = this;
 

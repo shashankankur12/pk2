@@ -34,8 +34,7 @@ public class Add_Exp extends AppCompatActivity {
     private TextView dateView;
     private int year, month, day;
     public EditText editText_amt,editText_des;
-    public String[] commandArray = new String[20];
-    //public String[] commandArray = new String[]{"Food","Transport","Others"};
+    public String[] commandArray = new String[30];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +61,7 @@ public class Add_Exp extends AppCompatActivity {
 
         myDb = new DatabaseHelper(this);
         btn = (Button) findViewById(R.id.button_sbt);
-        dateView = (TextView) findViewById(R.id.dateview);
+        dateView = (TextView) findViewById(R.id.dateView);
         btnViewAll = (Button) findViewById(R.id.button_view);
         editText_des = (EditText) findViewById(R.id.editText_des);
         editText_amt = (EditText) findViewById(R.id.editText_amt);
@@ -118,7 +117,6 @@ public class Add_Exp extends AppCompatActivity {
         for(j=i+1;j<20;j++)
             commandArray[j]="";
     }
-
 
     //DATE PICKER
     @SuppressWarnings("deprecation")
@@ -260,6 +258,9 @@ public class Add_Exp extends AppCompatActivity {
 
                         editText_amt.setText("");
                         editText_des.setText("");
+
+                        //Show Current Inserted Data
+
                     }
 
                 }

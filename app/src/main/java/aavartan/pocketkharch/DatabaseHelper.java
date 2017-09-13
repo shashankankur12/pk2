@@ -117,10 +117,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("update main_table set CATEGORY='OTHERS' where CATEGORY='"+CatID+"';");
     }
 
+    public void DeleteRow(Integer RowID){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        //sqLiteDatabase.execSQL("delete from cat_table where CATEGORY='"+CatID+"';");
+        sqLiteDatabase.execSQL("delete from main_table where ID='"+RowID+"';");
+    }
+
     public void UpdateCat(String CatID,String NewCatID){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.execSQL("update cat_table set CATEGORY='"+NewCatID+"' where CATEGORY='"+CatID+"';");
         sqLiteDatabase.execSQL("update main_table set CATEGORY='"+NewCatID+"' where CATEGORY='"+CatID+"';");
+    }
+
+    public Cursor GetDateData(String Curday,String CurMonth,String CurYear){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME+" where DAY = '"+Curday+"' and MONTH = '"+CurMonth+"' and YEAR = '"+CurYear+"'",null);
+        return res;
     }
 
     //Dump Query
