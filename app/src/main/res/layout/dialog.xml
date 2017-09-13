@@ -12,8 +12,7 @@
         android:text="Month"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="54dp" />
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:id="@+id/spinner"

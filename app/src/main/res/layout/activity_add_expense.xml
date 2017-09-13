@@ -78,7 +78,7 @@
             android:layout_below="@+id/textView12"
             android:layout_toEndOf="@+id/textView12"
             android:ems="10"
-            android:inputType="number|numberSigned|numberDecimal" />
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/editText_des"
@@ -110,9 +110,10 @@
             android:id="@+id/button_sbt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Add"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:text="Add" />
+            android:layout_marginStart="88dp" />
 
 
     </RelativeLayout>
@@ -121,9 +122,10 @@
         android:id="@+id/button_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="view"
+        android:layout_marginEnd="83dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="view" />
+        android:layout_alignParentEnd="true" />
 
 
     <android.support.v7.widget.Toolbar

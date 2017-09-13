@@ -270,7 +270,7 @@ public class MainActivity extends AppCompatActivity
                 // Include dialog.xml file
                 dialog.setContentView(R.layout.dialog);
                 // Set dialog title
-                dialog.setTitle("Custom Dialog");
+                dialog.setTitle("");
 
                 // set values for custom dialog components - text, and button
                 TextView text = (TextView) dialog.findViewById(R.id.textView);
